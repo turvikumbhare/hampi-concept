@@ -1,0 +1,100 @@
+/* Hampi monuments. Coordinates: OpenStreetMap (queried 2026-10-03).
+   cat: "royal" = Royal Hampi, "local" = Sacred & Local Hampi. icon: key in icons.js */
+const SITE_NOTE = "Timings and ticketing change; confirm with the Archaeological Survey of India or Karnataka Tourism before you go.";
+const CAT_LABEL = {royal:"Royal Hampi", local:"Sacred & Local Hampi"};
+const MONUMENTS = [
+/* ---------------- ROYAL HAMPI ---------------- */
+{cat:"royal",icon:"lotus",name:"Lotus Mahal",lat:15.32028,lng:76.47139,type:"Pavilion",period:"16th century",by:"Vijayanagara court",
+ note:"Indo-Islamic pavilion of the Zenana Enclosure",
+ hero:"The Lotus Mahal is an elegant palace built during the Vijayanagara Empire, believed to have served as a recreational space for royal women. Its distinctive lotus-inspired design, graceful arches and domes reflect a blend of Hindu and Islamic architectural styles. Explore its intricate details and discover the architectural beauty of the royal era.",
+ desc:"A two-storeyed pavilion inside the Zenana Enclosure, named for the lotus-bud shape of its multifoliate arches. Its blend of Hindu and Islamic architectural elements is typical of the later Vijayanagara court. Its original purpose is debated: a retreat for the royal women, or a council chamber.",
+ tips:["The structure is fenced; admire it from the garden.","Shade is scarce. Carry water and a hat.","The Elephant Stables are a short walk away."]},
+{cat:"royal",icon:"stables",name:"Elephant Stables",lat:15.32111,lng:76.47278,type:"Royal stables",period:"15th–16th century",by:"Vijayanagara court",
+ note:"Eleven domed chambers for the royal elephants",
+ desc:"A long, symmetrical building of eleven domed chambers that housed the state elephants. Each dome is different: some ribbed, some fluted, some vaulted. A central hall with an upper gallery is thought to have held musicians for ceremonial occasions.",
+ tips:["Walk along the front for the best view of the different dome styles.","Morning light is best for photographs.","Nearby: Lotus Mahal."]},
+{cat:"royal",icon:"bath",name:"Queen’s Bath",lat:15.31342,lng:76.47268,type:"Royal bath",period:"15th–16th century",by:"Vijayanagara court",
+ note:"Royal bath with arched balconies and a sunken pool",
+ desc:"A plain exterior hides an elaborately arched interior. A sunken pool, about fifteen metres square, is ringed by a corridor with projecting balconies and Indo-Islamic arches and domes. Water once flowed in through channels; the plaster and stucco decoration is still visible in places.",
+ tips:["Allow ten to fifteen minutes.","The site sits slightly outside the main cluster; cycle or take an auto.","Stay on marked paths."]},
+{cat:"royal",icon:"platform",name:"Mahanavami Dibba",lat:15.31596,lng:76.47084,type:"Ceremonial platform",period:"Early 16th century",by:"Krishnadevaraya (traditionally)",
+ note:"Grand viewing platform for the Dasara festival",
+ desc:"A tiered stone platform in the Royal Centre from which the king watched the Mahanavami (Dasara) festivities: processions, dances, wrestling and military parades. Its granite faces carry friezes of elephants, horses, dancers, musicians and hunting scenes.",
+ tips:["Visit early morning or late afternoon for softer light on the carvings.","Climb to the top for a view across the Royal Centre.","Combine with the Stepped Tank and Hazara Rama Temple, both a few minutes' walk away."]},
+{cat:"royal",icon:"temple",name:"Hazara Rama Temple",lat:15.31781,lng:76.46887,type:"Royal temple",period:"Early 15th century",by:"Devaraya I (traditionally)",
+ note:"Private temple of the royal household",
+ desc:"The private temple of the royal household. Its walls are covered with panels from the Ramayana in shallow relief, running in bands around the structure. Slender black-stone pillars in the mantapa are polished to a glassy finish.",
+ tips:["Read the reliefs clockwise, as the story unfolds around the walls.","Visit when it is quiet, early in the day."]},
+{cat:"royal",icon:"hall",name:"Royal Enclosure (King’s Palace Area)",lat:15.31641,lng:76.46925,type:"Palace compound",period:"15th–16th century",by:"Vijayanagara court",
+ note:"The walled heart of the empire's court",
+ desc:"The Royal Enclosure was the seat of the Vijayanagara court. Today the area holds the plinth of the King's Audience Hall, the Mahanavami Dibba, water tanks and the foundations of palace buildings. Only stone bases survive; the timber superstructures are long gone, but the scale of the platforms gives a sense of the court's size.",
+ tips:["Read the plan board first. The ruins are easier to understand with it.","Allow an hour to walk the enclosure.","One ticket usually covers the Royal Centre monuments."]},
+{cat:"royal",icon:"steps",name:"Stepped Tank",lat:15.31502,lng:76.47033,type:"Water structure",period:"15th–16th century",by:"Vijayanagara court",
+ note:"Geometric stepped water tank of the Royal Centre",
+ desc:"A symmetrical stepped tank built of black schist, its tiers descending in neat geometric patterns to the water. It was fed by an aqueduct and served ritual and ceremonial uses within the Royal Centre. It was excavated in the 1980s.",
+ tips:["The stonework is best seen from the rim.","Good sunrise photo spot."]},
+
+/* ---------------- SACRED & LOCAL HAMPI ---------------- */
+{cat:"local",icon:"gopura",name:"Virupaksha Temple",lat:15.33517,lng:76.45868,type:"Living temple",period:"7th century onwards",by:"Expanded under Vijayanagara rulers",
+ note:"Living temple at the heart of Hampi Bazaar",
+ desc:"The oldest and still-active temple of Hampi, dedicated to Shiva as Virupaksha and to his consort Pampa Devi. Its towering east gopura faces Hampi Bazaar. In a dark chamber inside, the gopura's inverted image falls on the wall in a pinhole-camera effect. The temple has been in continuous worship for well over a thousand years.",
+ tips:["Remove footwear before entering.","Visit at dawn or dusk for aarti and softer light.","The temple elephant often greets visitors in the courtyard in the morning."]},
+{cat:"local",icon:"chariot",name:"Vittala Temple Complex",pano:"images/vittala-360.jpg",model:"models/stone-chariot.glb",modelTitle:"Stone Chariot",lat:15.34227,lng:76.47547,type:"Temple complex",period:"16th century",by:"Krishnadevaraya (traditionally)",
+ note:"Stone Chariot, musical pillars and Hampi's finest carving",
+ desc:"The most celebrated monument at Hampi. Its Maha Mantapa holds carved pillars that once produced musical notes when struck, though tapping is now prohibited. In the courtyard stands the Stone Chariot, a shrine to Garuda shaped like a chariot, which appears on the Indian ₹50 note. The temple was probably never fully consecrated.",
+ tips:["Arrive at opening: it gets crowded and hot by midday.","Ticketed site and a UNESCO core monument.","Best light for the Stone Chariot is early morning.","Walk along the river path from Sule Bazaar for a scenic approach."]},
+{cat:"local",icon:"temple",name:"Achyutaraya Temple",lat:15.33196,lng:76.47009,type:"Temple",period:"1534",by:"Achyuta Deva Raya",
+ note:"Temple at the end of Sule Bazaar",
+ desc:"A large, fully-walled temple dedicated to Tiruvengalanatha, an avatar of Vishnu. It stands at the end of the Sule Bazaar street, and its gateway, pillared halls and courtyard show the late Vijayanagara style.",
+ tips:["Walk through Sule Bazaar to the temple.","Quiet in the early morning."]},
+{cat:"local",icon:"temple",name:"Krishna Temple",lat:15.33021,lng:76.46044,type:"Temple",period:"1513",by:"Krishnadevaraya",
+ note:"Temple with a long, colonnaded bazaar street",
+ desc:"Built to mark a military victory, this temple fronts a long ruined colonnaded bazaar, the Krishna Bazaar. The reliefs and gateway tower give a sense of how elaborate Hampi's temple streets once were.",
+ tips:["The adjacent bazaar street makes a good photo."]},
+{cat:"local",icon:"hill",name:"Hemakuta Hill Temple Complex",lat:15.33293,lng:76.45935,type:"Temple cluster",period:"9th–14th century",by:"Pre-Vijayanagara and Vijayanagara",
+ note:"Early Shaiva and Jain shrines overlooking the bazaar",
+ desc:"A cluster of small temples, some with distinctive triple-towered sanctums, scattered across a rocky hill above Virupaksha Temple. Many predate the empire. The hill, with its open terraces and gateways, is one of the most popular sunset spots in Hampi.",
+ tips:["Short climb from the bazaar.","Arrive an hour before sunset."]},
+{cat:"local",icon:"narasimha",name:"Lakshmi Narasimha",lat:15.32911,lng:76.45894,type:"Monolith",period:"1528",by:"Krishnadevaraya (reign)",
+ note:"Monolithic Narasimha, 6.7 m tall (also called Ugra Narasimha)",
+ desc:"A colossal monolithic sculpture of Vishnu as the fierce man-lion, seated on the coils of the serpent Adishesha. It stands about 6.7 metres tall. Damage from the 16th century removed the smaller image of Lakshmi that once sat on its lap, which is why it is also called Ugra Narasimha.",
+ tips:["Right beside the Badavilinga Temple.","On the road to the Royal Centre. Easy to combine."]},
+{cat:"local",icon:"ganesha",name:"Sasivekalu Ganesha",lat:15.33140,lng:76.45997,type:"Monolith",period:"15th century",by:"Vijayanagara period",
+ note:"Mustard-seed Ganesha under a pillared mantapa",
+ desc:"A monolithic Ganesha statue about 2.4 metres tall, named for the shape of its belly, which resembles a mustard seed. It sits within an open pillared mantapa on Hemakuta Hill's slope.",
+ tips:["Pair with the Hemakuta Hill temples."]},
+{cat:"local",icon:"linga",name:"Badavilinga Temple",lat:15.32932,lng:76.45905,type:"Shiva shrine",period:"Vijayanagara period",by:"Local tradition: a peasant woman",
+ note:"A giant monolithic linga in a water-filled chamber",
+ desc:"A small shrine housing the largest monolithic Shiva linga in Hampi, about three metres tall, standing in a chamber that water from a canal keeps flooded. Local tradition says it was commissioned by a peasant woman, which gives the temple its name (badava means poor).",
+ tips:["Next to the Lakshmi Narasimha monolith.","Quick stop, but photogenic in soft light."]},
+{cat:"local",icon:"bazaar",name:"Hampi Bazaar",lat:15.33457,lng:76.46270,type:"Market street",period:"Vijayanagara period to today",by:"Vijayanagara period",
+ note:"Market street running to Virupaksha Temple",
+ desc:"The long, wide street that runs east from the Virupaksha Temple, lined with colonnaded stone shops on both sides. Once a thriving market, today it holds guesthouses, cafés and craft stalls, and it is the starting point for most visitors.",
+ tips:["Plan food, bicycle hire and guides here.","Stroll it at dusk, when the temple is lit."]},
+{cat:"local",icon:"bull",name:"Monolithic Bull",lat:15.33388,lng:76.46685,type:"Monolith",period:"Vijayanagara period",by:"Vijayanagara period",
+ note:"Giant Nandi on the Matanga road",
+ desc:"A large Nandi bull, Shiva's vehicle, carved from a single piece of rock beside the road to Matanga Hill, with the ruins of Ranga Mantapa nearby.",
+ tips:["On the way to the Matanga Hill sunrise climb."]}
+].map(m=>({...m,slug:m.name.toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}));
+
+/* Guided tour routes. Times are screen-viewing time. */
+const ROUTES = [
+ {id:"quick",title:"Quick Walk",mins:10,icon:"chariot",tone:["#f7c98f","#d9743f"],blurb:"Five icons in ten minutes: a living temple, a stone chariot, two royal landmarks and a sunset hill.",
+  stops:["virupaksha-temple","vittala-temple-complex","lotus-mahal","elephant-stables","hemakuta-hill-temple-complex"]},
+ {id:"sunset",title:"Sunset Stroll",mins:10,icon:"hill",tone:["#ffc89a","#b4441a"],blurb:"Wander the bazaar, step into the temple, then climb the hill for the golden hour.",
+  stops:["hampi-bazaar","virupaksha-temple","hemakuta-hill-temple-complex"]},
+ {id:"water",title:"Water Wonders",mins:15,icon:"steps",tone:["#e0d6b4","#6e6648"],blurb:"How an empire in dry country captured water: a stepped tank, a royal bath and a flooded shrine.",
+  stops:["stepped-tank","queens-bath","badavilinga-temple"]},
+ {id:"giants",title:"Giants in Stone",mins:15,icon:"narasimha",tone:["#e3d3bd","#8a6a4d"],blurb:"Four colossal monoliths, each carved from a single boulder: a man-lion, a linga, a Ganesha and a bull.",
+  stops:["lakshmi-narasimha","badavilinga-temple","sasivekalu-ganesha","monolithic-bull"]},
+ {id:"stories",title:"Stories in Stone",mins:20,icon:"temple",tone:["#e8b49a","#7d2a10"],blurb:"Read the walls: Ramayana panels, festival friezes, musical pillars and a chariot that never moved.",
+  stops:["hazara-rama-temple","mahanavami-dibba","krishna-temple","vittala-temple-complex"]},
+ {id:"royal",title:"Royal Hampi Deep Dive",mins:30,icon:"lotus",tone:["#f0a878","#8f2e12"],blurb:"Walk the corridors of power: audience hall, ceremonial platform, water tanks and the queens’ retreats.",
+  stops:["royal-enclosure-kings-palace-area","mahanavami-dibba","stepped-tank","hazara-rama-temple","lotus-mahal","elephant-stables","queens-bath"]},
+ {id:"sacred",title:"Sacred & Local Deep Dive",mins:30,icon:"gopura",tone:["#d6c1a6","#3d2a20"],blurb:"From the living Virupaksha Temple to giant monoliths and a bazaar frozen in time, ending at Vittala.",
+  stops:["virupaksha-temple","hampi-bazaar","hemakuta-hill-temple-complex","sasivekalu-ganesha","lakshmi-narasimha","badavilinga-temple","krishna-temple","achyutaraya-temple","monolithic-bull","vittala-temple-complex"]}
+];
+/* Slugs that have a photo at images/<slug>.jpg. Add a slug here once its photo exists. */
+const PHOTOS = ["virupaksha-temple","vittala-temple-complex","hemakuta-hill-temple-complex","achyutaraya-temple","krishna-temple","stepped-tank","elephant-stables","lotus-mahal","lakshmi-narasimha","queens-bath","mahanavami-dibba","hazara-rama-temple","royal-enclosure-kings-palace-area","sasivekalu-ganesha","badavilinga-temple","hampi-bazaar","monolithic-bull"];
+/* Photo for each guided-tour route card (routes without one fall back to a coloured card). */
+const ROUTE_PHOTOS = {quick:"images/virupaksha-temple.jpg",sunset:"images/route-sunset.jpg",water:"images/route-water.jpg",stories:"images/vittala-temple-complex.jpg",sacred:"images/route-sacred.jpg",royal:"images/lotus-mahal.jpg",giants:"images/route-giants.jpg"};
